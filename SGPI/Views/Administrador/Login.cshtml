@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    //Aca selecciono para que aparezca el layout
+    Layout = "_LayoutSGPI";
+}
+
+<!--Aca titulo-->
+<h1>Login</h1>
+<form>
+<center>
+<div class="form-group">
+<!--Aca un label-->
+<label for="usuariotxt">Usuario</label>
+<!--Aca un input-->
+<input type="text" class="form-control col-sm-4" id="usuariotxt" requiered />
+</div>
+
+<div class="form-group">
+<label for="password.txt">Contraseña</label>
+<input type="password" class="form-control col-sm-4" id="passwordtxt" requiered />
+</div>
+
+
+
+<!---link-->
+<a href="/Administrador/CrearUsuario" id="recuperarPass">¿Olvidaste la contraseña?</a>
+
+<!--Aca un botton con color-->
+
+<button type="button" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button></center>
+<!--<button id="ingresarbtn type"submit>Ingresar</button> -->
+</form>

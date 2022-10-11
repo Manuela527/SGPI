@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "CrearUsuario";
+
+    Layout = "_LayoutSGPI";
+}
+<!--Centrar los recuadros-->
+
+<h1>Crear Usuario</h1>
+<form action="" class="form-inline justify-content-center">
+<center>
+<!-- menu-->
+<ul class="nav nav-pills" class="form">
+    <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Administrador/CrearUsuario">Crear Usuario</a>
+    </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/Administrador/BuscarUsuario">Buscar Usuario</a>
+    </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/Administrador/EliminarUsuario">Eliminar Usuario</a>
+    </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/Administrador/EditarUsuario">Editar Usuario</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Reportes</a>
+    </li>
+</ul>
+</center>
+</form>
+<br />
+<!-- columnas-->
+<div class="container text-center">
+    <div class="row align-items-start">
+        <div class="col-4">
+            <!--Anexo el select-->
+            <label>Tipo de Documento</label>
+            <br />
+            <select class="form-select col-sm-12" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Cedula de Ciudadania</option>
+                <option value="2">Tarjeta de Extranjeria</option>
+                <option value="3">Ninguno</option>
+            </select>
+            <br />
+            <label>Nombre</label>
+            <br />
+            <input type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
+            <br />
+            <label>Apellidos</label>
+            <br />
+            <input type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
+        </div>
+        <div class="col-4">
+            <label>Numero de Documento</label>
+            <br />
+            <input type="text" class="form-control col-sm-12" id="numerodocumentousuariotxt" required />
+            <br />
+            <label>Correo Electronico</label>
+            <input type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
+            <label>Rol</label>
+            <br />
+            <select class="form-select col-sm-12" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Administrador</option>
+                <option value="2">Coordinador</option>
+                <option value="3">Estudiante</option>
+            </select>
+            
+        </div>
+        <div class="col order-last">
+            <label>Genero</label>
+            <br />
+            <select class="form-select col-sm-12" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+                <option value="3">Otro</option>
+            </select>
+            <br/>
+            <br />
+            <br />
+            <label>Programas</label>
+            <br />
+            <select class="form-select col-sm-12" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Maestría en Gestión TI</option>
+                <option value="2">Especialización SI</option>
+                <option value="3">Maestría en Medio Amb</option>
+            </select>
+        </div>
+    </div>
+    
+       
+    
+
+</div>
+<br />
+<br />
+<br />
+
+<center>
+<button type="button" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button>
+</center>
+

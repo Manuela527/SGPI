@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "ProgamarAsignatura";
+    Layout = "_LayoutSGPI";
+}
+
+<h1 style="text-align:center">Progamar Asignatura</h1>
+<form action="" class="form-inline justify-content-center">
+    <center>
+        <!-- menu-->
+        <ul class="nav nav-pills" class="form">
+            <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/Coordinador/BuscarCoordinador">Buscar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/Coordinador/ProgramarAsignatura">Progamar Asignatura</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Coordinador/HomologacionCoordinador">Homologación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Coordinador/EntrevistasCoordinador">Entrevistas</a>
+            </li>
+           
+           <li class="nav-item">
+                <a class="nav-link " href="/Coordinador/ReportesCoordinador">Reportes</a>
+            </li>
+        </ul>
+    </center>
+</form>
+<br />
+<br />
+<form>
+<div class="container text-center">
+    <div class="row align-items-start">
+        <div class="col-6">
+            <!--Anexo el select-->
+            <label>Periodo Academico</label>
+            <br />
+            <input type="text" class="form-control col-sm-12" id="periodoacademicotxt" required />
+            <br />
+            </div>
+     </div>
+</div>
+       <div class="col-6">
+    <label>Programas</label>
+            <br />
+            <select class="form-select col-sm-12" aria-label="Default select example">
+                <option selected></option>
+                <option value="1">Maestría en Gestión TI</option>
+                <option value="2">Especialización SI</option>
+                <option value="3">Maestría en Medio Amb</option>
+            </select>
+    </div>
+    </form>
+    <br />
+<br />
+<div class="tabletable-responsive">
+    <table class="table">
+        <thead class="table-success">
+            <tr>
+                <th>Fecha</th>
+                <th>Sala o Aula</th>
+                <th>Asignatura</th>
+                <th>Codigo Asignatura</th>
+                <th>Opción</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20/10/2022</td>
+                <td>5-210</td>
+                <td>Ingenieria Medio Amb</td>
+                <td>123456</td>
+                <td><button type="button" class="btn btn-primary btn-sm">Agregar</button></td>
+                
+            </tr>
+            </table>
+ </div>

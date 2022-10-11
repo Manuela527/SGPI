@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "BuscarCoordinador";
+    Layout = "_LayoutSGPI";
+}
+
+<h1 style="text-align:center">Buscar Coordinador</h1>
+<form action="" class="form-inline justify-content-center">
+    <center>
+        <!-- menu-->
+        <ul class="nav nav-pills" class="form">
+            <li class="nav-item">
+                <a class="nav-link active " aria-current="page" href="/Coordinador/BuscarCoordinador">Buscar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Coordinador/ProgramarAsignatura">Progamar Asignatura</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Coordinador/HomologacionCoordinador">Homologación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Coordinador/EntrevistasCoordinador">Entrevistas</a>
+            </li>
+           <li class="nav-item">
+                <a class="nav-link " href="/Coordinador/ReportesCoordinador">Reportes</a>
+            </li>
+        </ul>
+    </center>
+</form>
+<br />
+<br />
+
+
+<div class="input-group">
+    <input type="search" class="form-control col-sm-3" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">Buscar Usuario</button>
+</div>
+
+ <div class="tabletable-responsive">
+    <table class="table">
+        <thead class="table-success">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Genero</th>
+                <th>Documento</th>
+                <th>Programa</th>
+                <th>Rol</th>
+                <th>Correo</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>Masculino</td>
+                <td>123456</td>
+                <td>Ingenieria Medio Amb</td>
+                <td>Estudiante</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>Femenino</td>
+                <td>9854687</td>
+                <td>Especializacion</td>
+                <td>Coordinador</td>
+                <td>mary@example.com</td>
+            </tr>
+    </table>  
+
+</div>
