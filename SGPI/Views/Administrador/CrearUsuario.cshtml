@@ -37,12 +37,7 @@
             <!--Anexo el select-->
             <label>Tipo de Documento</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Cedula de Ciudadania</option>
-                <option value="2">Tarjeta de Extranjeria</option>
-                <option value="3">Ninguno</option>
-            </select>
+            @Html.DropDownList("IdDoc",new SelectList(ViewBag.Tipodocumento,"IdDoc","TipoDocumento"),new{@class="form-contol dropdown"})            </select>
             <br />
             <label>Primer Nombre</label>
             <br />
@@ -108,8 +103,12 @@
 <br />
 <br />
 <br />
-
+@if(ViewBag.mensaje != null){
+ <div class="alert alert-succes" role="alert">
+     @ViewBag.mensaje
+ </div>
+}
 <center>
-<button type="button" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button>
+<button type="submit" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button>
 </center>
 

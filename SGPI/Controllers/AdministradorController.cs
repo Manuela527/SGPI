@@ -75,12 +75,12 @@ namespace SGPI.Controllers
             var usuarioLogin = context.Usuarios
                 .Where(consulta => consulta.NumeroDocumento == numerodoc &&
                 consulta.Password == pass).FirstOrDefault();
-            if (usuarioLogin == null)
+            if (usuarioLogin != null)
             {
                 if (usuarioLogin.IdRol == 1)
                 {
                     CrearUsuario();
-                    return View("CrearUsuario");
+                    return Redirect("Administrador/CrearUsuario");
                 }
                 //Coordinador
                 else if (usuarioLogin.IdRol == 2)
@@ -104,36 +104,65 @@ namespace SGPI.Controllers
             }
             return View();
         }
-            public IActionResult OlvidarContrasena()
-{
-return View();
-}
+        public IActionResult OlvidarContrasena()
+        {
+            return View();
+        }
         //Anexo el de crear usuario
         public IActionResult CrearUsuario()
         {
+
+            ViewBag.genero = context.Generos.ToList();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CrearUsuario(Usuario usuario)
+        {
+            context.Usuarios.Add(usuario);
+            context.SaveChanges();
+
+            ViewBag.mensaje = "usuario creado exitosamente";
             ViewBag.genero = context.Generos.ToList();
             return View();
         }
 
-//Anexo el de buscar usuario
-public IActionResult BuscarUsuario()
-{
-return View();
+        //Anexo el de buscar usuario
+        public IActionResult BuscarUsuario()
+        {
+            Usuario us = new Usuario();
+            return View(us);
+        }
+        [HttpPost]
+        public IActionResult BuscarUsuario(Usuario usuario)
+        {
+            string numerodoc = usuario.NumeroDocumento;
+
+            var user = context.Usuarios
+                .Where(consulta => consulta.NumeroDocumento == numerodoc).FirstOrDefault();
+            if (user != null)
+            {
+                return View(user);
+            }
+            else
+                return View();
+        }
+
+
+        //Anexo de buscar usuario
+        public IActionResult EliminarUsuario()
+        {
+            return View();
+        }
+        //Anexo de editar usuario
+        public IActionResult EditarUsuario()
+        {
+            return View();
+        }
+        //Anexo de Reportes
+        public IActionResult ReportesUsuario()
+        {
+            return View();
+        }
+    }
 }
-//Anexo de buscar usuario
-public IActionResult EliminarUsuario()
-{
-return View();
-}
-//Anexo de editar usuario
-public IActionResult EditarUsuario()
-{
-return View();
-}
-//Anexo de Reportes
-public IActionResult ReportesUsuario()
-{
-return View();
-}
-}
-}
+
