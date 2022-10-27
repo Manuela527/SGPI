@@ -13,16 +13,16 @@ namespace SGPI.Models
         }
 
         public int IdUsuario { get; set; }
-        public string NumeroDocumento { get; set; } = null!;
+        public string NumeroDocumento { get; set; } 
         public int IdDocumento { get; set; }
-        public string PrimerNombre { get; set; } = null!;
-        public string SegundoNombre { get; set; } = null!;
-        public string PrimerApellido { get; set; } = null!;
-        public string SegundoApellido { get; set; } = null!;
+        public string PrimerNombre { get; set; } 
+        public string SegundoNombre { get; set; } 
+        public string PrimerApellido { get; set; } 
+        public string SegundoApellido { get; set; }
         public int IdGenero { get; set; }
-        public string Email { get; set; } = null!;
+        public string Email { get; set; } 
         public int IdRol { get; set; }
-        public string Password { get; set; } = null!;
+        public string Password { get; set; } 
         public int IdPrograma { get; set; }
 
         public virtual Documento IdDocumentoNavigation { get; set; } = null!;

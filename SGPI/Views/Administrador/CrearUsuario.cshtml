@@ -1,4 +1,4 @@
-﻿
+﻿@model SGPI.Models.Usuario
 @{
     ViewData["Title"] = "CrearUsuario";
 
@@ -44,21 +44,30 @@
                 <option value="3">Ninguno</option>
             </select>
             <br />
-            <label>Nombre</label>
+            <label>Primer Nombre</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
+            <input asp-for="PrimerNombre" type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
             <br />
-            <label>Apellidos</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
+            <label>Segundo Nombre</label>
+            <br />
+            <input asp-for="SegundoNombre" type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
+            <br />
+
+            <label> Primer Apellido</label>
+            <br />
+            <input asp-for="PrimerApellido" type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
+            <label> Segundo Apellido</label>
+            <br />
+            <input asp-for="SegundoApellido" type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
         </div>
         <div class="col-4">
             <label>Numero de Documento</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="numerodocumentousuariotxt" required />
+            <input asp-for="NumeroDocumento" type="text" class="form-control col-sm-12" id="numerodocumentousuariotxt" required />
             <br />
             <label>Correo Electronico</label>
-            <input type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
+            <input asp-for= "Email" type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
             <label>Rol</label>
             <br />
             <select class="form-select col-sm-12" aria-label="Default select example">
