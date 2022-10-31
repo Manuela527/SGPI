@@ -37,7 +37,7 @@
             <!--Anexo el select-->
             <label>Tipo de Documento</label>
             <br />
-            @Html.DropDownList("IdDoc",new SelectList(ViewBag.Tipodocumento,"IdDoc","TipoDocumento"),new{@class="form-contol dropdown"})            </select>
+            @Html.DropDownList("IdDocumento",new SelectList(ViewBag.TipoDocumento,"IdDocumento","TipoDocumento"),new{@class="form-contol dropdown"})        
             <br />
             <label>Primer Nombre</label>
             <br />
@@ -65,34 +65,19 @@
             <input asp-for= "Email" type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
             <label>Rol</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Administrador</option>
-                <option value="2">Coordinador</option>
-                <option value="3">Estudiante</option>
-            </select>
+            @Html.DropDownList("IdRol",new SelectList(ViewBag.Rol,"IdRol","Rol1"),new{@class="form-contol dropdown"})
             
         </div>
         <div class="col order-last">
             <label>Genero</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
-                <option value="3">Otro</option>
-            </select>
+            @Html.DropDownList("IdGenero",new SelectList(ViewBag.Genero,"IdGenero","Genero1"),new{@class="form-contol dropdown"})
             <br/>
             <br />
             <br />
             <label>Programas</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Maestría en Gestión TI</option>
-                <option value="2">Especialización SI</option>
-                <option value="3">Maestría en Medio Amb</option>
-            </select>
+            @Html.DropDownList("IdPrograma",new SelectList(ViewBag.Programa,"IdPrograma","Programa1"),new{@class="form-contol dropdown"})
         </div>
     </div>
     

@@ -113,6 +113,9 @@ namespace SGPI.Controllers
         {
 
             ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            ViewBag.tipodocumento= context.Documentos.ToList();
             return View();
         }
         [HttpPost]
@@ -123,6 +126,9 @@ namespace SGPI.Controllers
 
             ViewBag.mensaje = "usuario creado exitosamente";
             ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            ViewBag.tipodocumento = context.Documentos.ToList();
             return View();
         }
 

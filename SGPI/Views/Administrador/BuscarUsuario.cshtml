@@ -41,13 +41,18 @@
     <input type="submit" />
 
     @if (Model != null)
-    <table class=""> 
-        <thead>
+    {
+        <table class="">
+            <thead>
             <tr> 
                 <th>@Html.DisplayNameFor(model=>model.PrimerNombre) </th>
+                    
                 <th>@Html.DisplayNameFor(model=>model.SegundoNombre) </th>
+                    
                 <th>@Html.DisplayNameFor(model=>model.PrimerApellido) </th>
+                    
                 <th>@Html.DisplayNameFor(model=>model.SegundoApellido) </th>
+                   
                     <th>@Html.DisplayNameFor(model=>model.Email) </th>
 
                 </tr>
@@ -62,6 +67,7 @@
             </tr>
         </tbody>
     </table>
-    <button type="submit">Buscar</button> />
+    }
+    <button type="submit">Buscar</button>
 </form>
 
