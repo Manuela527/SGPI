@@ -31,7 +31,7 @@
 </form>
 <br />
 <!-- columnas-->
-<div class="container text-center">
+<form  method="post">
     <div class="row align-items-start">
         <div class="col-4">
             <!--Anexo el select-->
@@ -80,20 +80,22 @@
             @Html.DropDownList("IdPrograma",new SelectList(ViewBag.Programa,"IdPrograma","Programa1"),new{@class="form-contol dropdown"})
         </div>
     </div>
-    
-       
-    
 
-</div>
-<br />
-<br />
-<br />
-@if(ViewBag.mensaje != null){
- <div class="alert alert-succes" role="alert">
-     @ViewBag.mensaje
- </div>
-}
-<center>
-<button type="submit" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button>
-</center>
+    <br />
+    <br />
+    <br />
+    @if (ViewBag.mensaje != null)
+    {
+        <div class="alert alert-succes" role="alert">
+            @ViewBag.mensaje
+        </div>
+    }
+    <center>
+        <button type="submit" class="btn btn-outline-danger" id="ingresarbtn type" submit>Ingresar</button>
+    </center>
+
+
+</form>
+
+
 

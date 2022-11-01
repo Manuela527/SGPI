@@ -29,7 +29,7 @@
 </form>
 <br />
 <!-- columnas-->
-<div class="container text-center">
+<form  method="post">
     <div class="row align-items-start">
         <div class="col-4">
             <!--Anexo el select-->
@@ -76,16 +76,16 @@
             @Html.DropDownList("IdPrograma",new SelectList(ViewBag.Programa,"IdPrograma","Programa1"),new{@class="form-contol dropdown"})
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+
+    <center>
+        <button type="submit" class="btn btn-outline-danger" id="editarbtn type" submit>Editar</button>
+    </center>
 
 
+</form>
 
 
-</div>
-<br />
-<br />
-<br />
-
-<center>
-    <button type="submit" class="btn btn-outline-danger" id="editarbtn type" submit>Editar</button>
-</center>
 

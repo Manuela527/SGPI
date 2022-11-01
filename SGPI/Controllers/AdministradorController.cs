@@ -155,58 +155,43 @@ namespace SGPI.Controllers
 
 
         //Anexo de buscar usuario
-        public IActionResult EliminarUsuario(Usuario user,int id)
+        public IActionResult EliminarUsuario(int ? Idusuario)
         {
-            Usuario usuario = user;
-            if (usuario == null)
-                return ViewBag.mensaje = "Eror al editar usuario";
-            else
+            Usuario user = context.Usuarios.Find(Idusuario);
+
+            if(user != null)
             {
-                user.IdUsuario = id;
                 context.Remove(user);
                 context.SaveChanges();
             }
-
-            return RedirectToAction("BuscarUsuario");
+            return Redirect("/Administrador/BuscarUsuario");
         }
             
         
         //Anexo de editar usuario
-        public IActionResult EditarUsuario(int id)
+        public IActionResult EditarUsuario(int ? Idusuario)
         {
-            ViewBag.tipodocumento = context.Documentos.ToList();
-            ViewBag.programa = context.Programas.ToList();
-            ViewBag.rol = context.Rols.ToList();
-            ViewBag.genero = context.Generos.ToList();
-            var listaUsuarios = context.Usuarios.Where(u => u.IdUsuario == id).ToList();
-            if (listaUsuarios != null)
+           Usuario usuario= context.Usuarios.Find(Idusuario);
+            if (usuario != null)
             {
-                return View(listaUsuarios.SingleOrDefault());
+                ViewBag.genero = context.Generos.ToList();
+                ViewBag.rol = context.Rols.ToList();
+                ViewBag.programa = context.Programas.ToList();
+                ViewBag.tipodocumento = context.Documentos.ToList();
+                return View(usuario);
             }
             else
             {
-                return View();
+                return Redirect("/Administrador/BuscarUsuario");
             }
-         
         }
         [HttpPost]
-        public IActionResult EditarUsuario(Usuario user,int id)
+        public IActionResult EditarUsuario(Usuario usuario)
         {
-            Usuario usuario = user;
-            if (usuario == null)
-                return ViewBag.mensaje = "Error al editar usuario";
-            else
-            {
-                user.IdUsuario = id;
-                context.Update(user);
-                context.SaveChanges();
-                ViewBag.tipodocumento = context.Documentos.ToList();
-                ViewBag.programa = context.Programas.ToList();
-                ViewBag.rol = context.Rols.ToList();
-                ViewBag.genero = context.Generos.ToList();
-            }
+            context.Update(usuario);
+            context.SaveChanges();
 
-            return RedirectToAction("BuscarUsuario");
+            return Redirect("/Administrador/BuscarUsuario");
         }
 
 

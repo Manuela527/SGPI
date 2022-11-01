@@ -64,7 +64,10 @@
                     <td>@Html.DisplayFor(modelitem=> modelitem.PrimerApellido)</td>
                     <td>@Html.DisplayFor(modelitem=> modelitem.SegundoApellido)</td>
                     <td>@Html.DisplayFor(modelitem=> modelitem.Email)</td>
-            </tr>
+                    <td>@Html.ActionLink("EditarUsuario","EditarUsuario", new{Idusuario=Model.IdUsuario})</td>
+                    <td>@Html.ActionLink("EliminarUsuario","EliminarUsuario",new{Idusuario=Model.IdUsuario},
+                    new{onclick="return confirm('¿Estas seguro de eliminarlo');"})</td>         
+                    </tr>
         </tbody>
     </table>
     }
