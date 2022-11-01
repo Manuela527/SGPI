@@ -155,15 +155,61 @@ namespace SGPI.Controllers
 
 
         //Anexo de buscar usuario
-        public IActionResult EliminarUsuario()
+        public IActionResult EliminarUsuario(Usuario user,int id)
         {
-            return View();
+            Usuario usuario = user;
+            if (usuario == null)
+                return ViewBag.mensaje = "Eror al editar usuario";
+            else
+            {
+                user.IdUsuario = id;
+                context.Remove(user);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("BuscarUsuario");
         }
+            
+        
         //Anexo de editar usuario
-        public IActionResult EditarUsuario()
+        public IActionResult EditarUsuario(int id)
         {
-            return View();
+            ViewBag.tipodocumento = context.Documentos.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.genero = context.Generos.ToList();
+            var listaUsuarios = context.Usuarios.Where(u => u.IdUsuario == id).ToList();
+            if (listaUsuarios != null)
+            {
+                return View(listaUsuarios.SingleOrDefault());
+            }
+            else
+            {
+                return View();
+            }
+         
         }
+        [HttpPost]
+        public IActionResult EditarUsuario(Usuario user,int id)
+        {
+            Usuario usuario = user;
+            if (usuario == null)
+                return ViewBag.mensaje = "Error al editar usuario";
+            else
+            {
+                user.IdUsuario = id;
+                context.Update(user);
+                context.SaveChanges();
+                ViewBag.tipodocumento = context.Documentos.ToList();
+                ViewBag.programa = context.Programas.ToList();
+                ViewBag.rol = context.Rols.ToList();
+                ViewBag.genero = context.Generos.ToList();
+            }
+
+            return RedirectToAction("BuscarUsuario");
+        }
+
+
         //Anexo de Reportes
         public IActionResult ReportesUsuario()
         {
