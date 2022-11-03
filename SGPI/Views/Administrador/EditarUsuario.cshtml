@@ -4,7 +4,7 @@
     Layout = "_LayoutSGPI";
 }
 
-<h1>Editar Usuario</h1>
+<h1 >Editar Usuario</h1>
 <form action="" class="form-inline justify-content-center">
     <center>
         <!-- menu-->
@@ -14,12 +14,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Administrador/BuscarUsuario">Buscar Usuario</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/EliminarUsuario">Eliminar Usuario</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/Administrador/EditarUsuario">Editar Usuario</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Administrador/ReportesUsuario">Reportes</a>
@@ -70,10 +64,14 @@
             @Html.DropDownList("IdGenero",new SelectList(ViewBag.Genero,"IdGenero","Genero1"),new{@class="form-contol dropdown"})
             <br />
             <br />
-            <br />
             <label>Programas</label>
             <br />
             @Html.DropDownList("IdPrograma",new SelectList(ViewBag.Programa,"IdPrograma","Programa1"),new{@class="form-contol dropdown"})
+            <br />
+            <br />
+            <label>Contraseña</label>
+            <br />
+            <input asp-for="Password" type="text" class="form-control col-sm-12" id="passwordtxt" required />
         </div>
     </div>
     <br />

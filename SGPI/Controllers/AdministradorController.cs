@@ -80,19 +80,19 @@ namespace SGPI.Controllers
                 if (usuarioLogin.IdRol == 1)
                 {
                     CrearUsuario();
-                    return Redirect("Administrador/CrearUsuario");
+                    return Redirect("/Administrador/CrearUsuario");
                 }
                 //Coordinador
                 else if (usuarioLogin.IdRol == 2)
                 {
-                    return Redirect("" + "Coordinador/BuscarCoordinador");
+                    return Redirect( "/Coordinador/BuscarCoordinador");
                 }
 
                 //Estudiante
                 else if (usuarioLogin.IdRol == 3)
 
                 {
-                    return Redirect("Estudiante/ModificarEstudiante");
+                    return Redirect("/Estudiante/ModificarEstudiante");
 
                 }
                 else { }
