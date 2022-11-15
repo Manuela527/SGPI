@@ -92,7 +92,7 @@ namespace SGPI.Controllers
                 else if (usuarioLogin.IdRol == 3)
 
                 {
-                    return Redirect("/Estudiante/ModificarEstudiante");
+                    return Redirect("/Estudiante/ModificarEstudiante/?Idusuario="+usuarioLogin.IdUsuario);
 
                 }
                 else { }
@@ -124,11 +124,13 @@ namespace SGPI.Controllers
             context.Usuarios.Add(usuario);
             context.SaveChanges();
 
-            ViewBag.mensaje = "usuario creado exitosamente";
+
+
             ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
             ViewBag.programa = context.Programas.ToList();
             ViewBag.tipodocumento = context.Documentos.ToList();
+            ViewBag.mensaje = "usuario creado exitosamente";
             return View();
         }
 

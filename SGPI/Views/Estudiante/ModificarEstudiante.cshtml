@@ -1,4 +1,5 @@
-﻿
+﻿@model SGPI.Models.Usuario
+
 @{
     ViewData["Title"] = "ModificarEstudiante";
     Layout = "_LayoutSGPI";
@@ -19,83 +20,67 @@
     </center>
 </form>
 <br />
-<div class="container text-center">
+<form method="post">
     <div class="row align-items-start">
         <div class="col-4">
             <!--Anexo el select-->
             <label>Tipo de Documento</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Cedula de Ciudadania</option>
-                <option value="2">Tarjeta de Extranjeria</option>
-                <option value="3">Ninguno</option>
-            </select>
+            @Html.DropDownList("IdDocumento",new SelectList(ViewBag.TipoDocumento,"IdDocumento","TipoDocumento"),new{@class="form-contol dropdown"})
             <br />
-            <label>Nombre</label>
+            <label>Primer Nombre</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
+            <input asp-for="PrimerNombre" type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
             <br />
-            <label>Apellidos</label>
+            <label>Segundo Nombre</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
+            <input asp-for="SegundoNombre" type="text" class="form-control col-sm-12" id="nombreusuariotxt" required />
+            <br />
+            <label>Primer Apellido</label>
+            <br />
+            <input asp-for="PrimerApellido" type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
+            <label>Segundo Apellido</label>
+            <br />
+            <input asp-for="SegundoApellido" type="text" class="form-control col-sm-12" id="apellidousuariotxt" required />
         </div>
         <div class="col-4">
             <label>Numero de Documento</label>
             <br />
-            <input type="text" class="form-control col-sm-12" id="numerodocumentousuariotxt" required />
+            <input asp-for="NumeroDocumento" type="text" class="form-control col-sm-12" id="numerodocumentousuariotxt" required />
             <br />
             <label>Correo Electronico</label>
-            <input type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
-            <label>Rol</label>
-            <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Administrador</option>
-                <option value="2">Coordinador</option>
-                <option value="3">Estudiante</option>
-            </select>
-
-        </div>
+            <input asp-for="Email" type="text" class="form-control col-sm-12" id="correoelectronicousuariotxt" required />
+            </div>
         <div class="col order-last">
             <label>Genero</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
-                <option value="3">Otro</option>
-            </select>
-            <br />
+            @Html.DropDownList("IdGenero",new SelectList(ViewBag.Genero,"IdGenero","Genero1"),new{@class="form-contol dropdown"})
             <br />
             <br />
             <label>Programas</label>
             <br />
-            <select class="form-select col-sm-12" aria-label="Default select example">
-                <option selected></option>
-                <option value="1">Maestría en Gestión TI</option>
-                <option value="2">Especialización SI</option>
-                <option value="3">Maestría en Medio Amb</option>
-            </select>
-              <br />
-             <label>Certificado</label>
+            @Html.DropDownList("IdPrograma",new SelectList(ViewBag.Programa,"IdPrograma","Programa1"),new{@class="form-contol dropdown"})
             <br />
-            <div class="input-group mb-3">
-           <input type="file" class="form-control" id="inputGroupFile02">
-           <label class="input-group-text" for="inputGroupFile02">Subir</label>
-            </div>
+            <br />
+            <label>Contraseña</label>
+            <br />
+            <input asp-for="Password" type="text" class="form-control col-sm-12" id="passwordtxt" required />
+            <b><label for="certificadotxt">Enviar Certificado</label></b>
+            <br>
+            <input type="file" placeholder="" style="width : 400px; heigth : 1px" id="primerlastnametxt" />
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+
+    <center>
+        <button type="submit" class="btn btn-outline-danger" id="editarbtn type" submit>Modificar</button>
+    </center>
+    
 
 
+</form>
 
 
-</div>
-<br />
-<br />
-<br />
-
-<center>
-    <button type="button" class="btn btn-outline-danger" id="editarbtn type" submit>Modificar Estudiante</button>
-</center>
 

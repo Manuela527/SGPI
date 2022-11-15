@@ -1,4 +1,4 @@
-﻿
+﻿@model SGPI.Models.Pago
 @{
     ViewData["Title"] = "PagosEstudiante";
     Layout = "_LayoutSGPI";
@@ -19,4 +19,35 @@
     </center>
 </form>
 <br />
+<div class="tab-content">
+<form method="post">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Valor Pago</th>
+                    <th scope="col">Fecha Pago</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input asp-for="ValorPago" type="number" style="width : 180px; heigth : 5px" id="numdoctxt" required /></td>
+                    <td><input asp-for="Fecha" type="date" style="width : 140px; heigth : 5px" id="timectxt" required /></td>
+                    <td><input type="file" placeholder="pago2.pdf" style="width : 400px; heigth : 5px" id="numdoctxt" /></td>
+                </tr>
+            </tbody>
+        </table>
+        @if (ViewBag.mensaje != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.mensaje
+            </div>
+        }
+        <center>
+            <button class="btn btn-outline-primary" id="enviarpagobtn" type="submit" value="enviarpago">ENVIAR PAGO</button>
+        </center>
 
+        </div>
+</form>
+ </div>
